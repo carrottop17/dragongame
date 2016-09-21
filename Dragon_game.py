@@ -34,9 +34,16 @@ def fight():
 			dragon['health'] = 0
 		print "the dragon's health is now " + str(dragon['health'])
 		time.sleep(2)
+	elif weapon != 'sword' and weapon != 'slingshot':
+		print "This weapon is not a valid choice.  The Dragon takes advantage of your stupidity and attacks for 5 points of Fire Breath"
+		hero['health'] = hero['health'] - 5
+		print "Your health is now " + str(hero['health'])
+		# weapon == raw_input("Type sword or slingshot")
+		fight()
+   
 
 def dragon_fight():
-	print "Now the dragon attacks you!"
+	print "The dragon attacks you!"
 	time.sleep(2)
 	dragon_attack = dragon['fire'] * random.randrange(5)
 	defense = random.randrange(10)
